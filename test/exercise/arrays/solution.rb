@@ -13,7 +13,8 @@ module Exercise
       end
 
       def search(array, query, low = 0, high = array.size - 1)
-        return -1 unless array.include?(query)
+        return -1 if array.empty?
+        return -1 if query < array[0] || query > array[-1]
         return -1 if low > high
 
         mid = (low + high) / 2
